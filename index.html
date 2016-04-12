@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="home">
+
+    {% for post in site.posts %}
+
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+            {% if post.featured_image %}
+                <picture>
+                    <img src="{{ post.featured_image }}" />
+                </picture>
+            {% endif %}
+
+            <header class="post__header">
+
+                <h2 class="post__title" itemprop="name headline">{{ post.title }}</h2>
+
+            </header>
+
+            {{ post.content }}
+
+            <p class="post__meta ita small">
+                Posted on <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+                    {{ post.date | date: "%b %-d, %Y" }}
+                </time>{% if post.author %}, by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ post.author }}</span></span>{% endif %}
+            </p>
+
+        </article>
+
+        <span class="swash">&hellip;</span>
+
+    {% endfor %}
+    
+</div>
