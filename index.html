@@ -23,9 +23,7 @@ layout: default
             {{ post.content }}
 
             <p class="post__meta ita small">
-                Posted on <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
-                    {{ post.date | date: "%b %-d, %Y" }}
-                </time>{% if post.author %}, by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ post.author }}</span></span>{% endif %}
+                Posted on <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>{% if post.author %}, by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ post.author }}</span></span>{% endif %}
             </p>
 
         </article>
