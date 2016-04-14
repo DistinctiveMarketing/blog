@@ -41,3 +41,13 @@ show_rss: true
 exclude:
   - "_bower_components"
   - "bower.json"
+
+prose:
+  rooturl: '_posts'
+  siteurl: 'http://blog.distinctive.marketing'
+  media: 'media'
+  ignore:
+    - index.md
+    - _config.yml
+    - /_layouts
+    - /_includes
