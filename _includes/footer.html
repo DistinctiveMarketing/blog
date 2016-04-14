@@ -10,7 +10,7 @@
 
           {% if site.facebook_username %}
           <li>
-            <a href="https://www.facebook.com/{{ facebook_username }}">
+            <a href="https://www.facebook.com/{{ site.facebook_username }}">
                 <span class="icon icon-facebook"></span>
                 <span class="label">Facebook</span>
             </a>
@@ -37,7 +37,7 @@
 
           {% if site.linkedin_username %}
           <li>
-            <a href="http://www.linkedin.com/in/{{ site.linkedin_username }}">
+            <a href="http://www.linkedin.com/company/{{ site.linkedin_username }}">
                 <span class="icon icon-linkedin2"></span>
                 <span class="label">LinkedIn</span>
             </a>
@@ -61,7 +61,7 @@
             </a>
           </li>
           {% endif %}
-          
+
           {% if site.parent_url %}
             <li>
             <a href="{{ site.parent_url }}">

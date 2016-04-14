@@ -8,15 +8,9 @@ var DM = DM || {};
 
     'use strict';
 
-    var $infopage = $('#cookiePolicy');
-
     function _cookieName() {
-        var path = $(location).attr('href');
-        var oAnchor = $('<a>', { href:path } )[0];
-        var hostName = oAnchor.hostname;
-        var tHost = hostName.split(".");
-        var tTsoh =  tHost.reverse();
-        var n = tTsoh.join(".") + '.eucookie';
+        var name = "marketing.distinctive";
+        var n = name + '.eucookie';
         return n;
     }
 
@@ -28,10 +22,6 @@ var DM = DM || {};
         }
     }
 
-    function _readMore() {
-        $infopage.modal(options);
-    }
-
     function _setUp() {
         Cookies.set(cookiename, 'true', { expires: 365, path: '/' });
         $('#eucookielaw').remove();
@@ -39,7 +29,12 @@ var DM = DM || {};
 
     function _bindEvents() {
         $('body').on( 'click', '#acceptcookies', _setUp );
-        $('body').on( 'click', '#readmore', _readMore );
+    }
+
+    function _hideAfterDelay() {
+        setTimeout(function(){
+            _setUp();
+        }, 9000)
     }
 
     function _showBanner() {
@@ -49,6 +44,7 @@ var DM = DM || {};
     function fInit() {
         _showChooser();
         _bindEvents();
+        _hideAfterDelay();
     }
 
     DM.EUCookieChoice = {

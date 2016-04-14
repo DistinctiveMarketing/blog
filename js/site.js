@@ -1,5 +1,7 @@
 ---
 exclude: 'yes'
+sitemap:
+  exclude: 'yes'
 ---
 
 {% include_relative _js/vendor/modernizr.js %}

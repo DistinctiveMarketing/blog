@@ -7,7 +7,7 @@
     position: relative;
 
 	&__inner {
-		margin: $spacing-unit * 4 auto $spacing-unit / 2 auto;
+		margin: $spacing-unit * 2.5 auto $spacing-unit / 2 auto;
         width: 58%;
         width: calc(58% - (#{$spacing-unit} / 2));
         @include mq($until: tablet) {
